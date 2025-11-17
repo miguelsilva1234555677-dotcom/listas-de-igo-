@@ -1,0 +1,23 @@
+using System;
+using System.Globalization;
+
+namespace Programa
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double altura, peso, imc;
+            
+            Console.Write("Digite a altura (m): ");
+            altura = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            
+            Console.Write("Digite o peso (kg): ");
+            peso = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            
+            imc = peso / (altura * altura);
+            
+            Console.WriteLine("IMC = " + imc.ToString("F2", CultureInfo.InvariantCulture));
+        }
+    }
+}
