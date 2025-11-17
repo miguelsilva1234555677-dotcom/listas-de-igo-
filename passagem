@@ -1,0 +1,65 @@
+using System;
+using System.Globalization;
+
+namespace Programa
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int codigoDestino, tipoViagem;
+            double valorPassagem = 0, valorTotal;
+            string destino = "";
+            
+            Console.WriteLine("Códigos de destino:");
+            Console.WriteLine("1 - Morros (R$ 120,00)");
+            Console.WriteLine("2 - Barreirinhas (R$ 200,00)");
+            Console.WriteLine("3 - Bacabeira (R$ 50,00)");
+            Console.WriteLine("4 - Rosário (R$ 80,00)");
+            
+            Console.Write("Digite o código do destino: ");
+            codigoDestino = int.Parse(Console.ReadLine());
+            
+            Console.WriteLine("Tipo de viagem:");
+            Console.WriteLine("1 - Somente ida");
+            Console.WriteLine("2 - Ida e volta");
+            Console.Write("Digite o tipo de viagem: ");
+            tipoViagem = int.Parse(Console.ReadLine());
+            
+            // Definir valor da passagem conforme destino
+            if (codigoDestino == 1)
+            {
+                valorPassagem = 120.00;
+                destino = "Morros";
+            }
+            else if (codigoDestino == 2)
+            {
+                valorPassagem = 200.00;
+                destino = "Barreirinhas";
+            }
+            else if (codigoDestino == 3)
+            {
+                valorPassagem = 50.00;
+                destino = "Bacabeira";
+            }
+            else if (codigoDestino == 4)
+            {
+                valorPassagem = 80.00;
+                destino = "Rosário";
+            }
+            
+            // Calcular valor total
+            if (tipoViagem == 2) // Ida e volta
+            {
+                valorTotal = (valorPassagem * 2) * 0.9; // 10% de desconto
+            }
+            else // Somente ida
+            {
+                valorTotal = valorPassagem;
+            }
+            
+            Console.WriteLine("Destino: " + destino);
+            Console.WriteLine("Valor total: R$ " + valorTotal.ToString("F2", CultureInfo.InvariantCulture));
+        }
+    }
+}
