@@ -1,0 +1,24 @@
+using System;
+using System.Globalization;
+
+namespace Programa
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int minutosConsumidos;
+            double valorPagar = 50.00;
+            
+            Console.Write("Digite a quantidade de minutos consumidos: ");
+            minutosConsumidos = int.Parse(Console.ReadLine());
+            
+            if (minutosConsumidos > 100)
+            {
+                valorPagar += (minutosConsumidos - 100) * 2.0;
+            }
+            
+            Console.WriteLine("Valor a pagar: R$ " + valorPagar.ToString("F2", CultureInfo.InvariantCulture));
+        }
+    }
+}
