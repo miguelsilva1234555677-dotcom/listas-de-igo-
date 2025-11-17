@@ -1,0 +1,51 @@
+using System;
+using System.Globalization;
+
+namespace Programa
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double nota1, nota2, nota3, nota4, nota5, nota6, nota7;
+            double primeiraMedia, segundaMedia, mediaFinal;
+            string conceito;
+            
+            Console.WriteLine("Digite as 7 notas do aluno:");
+            Console.Write("Nota 1: ");
+            nota1 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Nota 2: ");
+            nota2 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Nota 3: ");
+            nota3 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Nota 4: ");
+            nota4 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Nota 5: ");
+            nota5 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Nota 6: ");
+            nota6 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Nota 7: ");
+            nota7 = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            
+            primeiraMedia = (nota1 + nota2 + nota3) / 3.0;
+            segundaMedia = (nota4 + nota5 + nota6) / 3.0;
+            mediaFinal = (primeiraMedia + segundaMedia + nota7) / 3.0;
+            
+            if (mediaFinal < 6.0)
+            {
+                conceito = "C";
+            }
+            else if (mediaFinal < 8.0)
+            {
+                conceito = "B";
+            }
+            else
+            {
+                conceito = "A";
+            }
+            
+            Console.WriteLine("Média final: " + mediaFinal.ToString("F1", CultureInfo.InvariantCulture));
+            Console.WriteLine("Conceito: " + conceito);
+        }
+    }
+}
